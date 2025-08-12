@@ -171,9 +171,9 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 🤝 Contact
 
 - **Portfolio**: [Your Portfolio URL]
-- **LinkedIn**: [Your LinkedIn]
-- **GitHub**: [Your GitHub]
-- **Email**: [Your Email]
+- **LinkedIn**: https://www.linkedin.com/in/kunavamshi/
+- **GitHub**: https://github.com/kunavamshi/
+- **Email**: vamshikuna905@gmail.com
 
 ---
 
