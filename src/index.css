@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3D Portfolio Design System - Modern Dark Theme with Neon Accents */
+
+@layer base {
+  :root {
+    /* Base Colors - Dark Modern Theme */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    /* Surface Colors */
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 5% 6%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Brand Colors - Cyberpunk Inspired */
+    --primary: 267 100% 70%;
+    --primary-foreground: 240 10% 3.9%;
+    --primary-glow: 267 100% 80%;
+    
+    /* Accent Colors */
+    --secondary: 180 100% 70%;
+    --secondary-foreground: 240 10% 3.9%;
+    --secondary-glow: 180 100% 80%;
+    
+    --accent: 210 100% 70%;
+    --accent-foreground: 240 10% 3.9%;
+    --accent-glow: 210 100% 80%;
+    
+    /* Neutral Colors */
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* UI Elements */
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 267 100% 70%;
+    
+    /* Design System Tokens */
+    --radius: 0.75rem;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary-glow)));
+    --gradient-surface: linear-gradient(145deg, hsl(240 6% 8%), hsl(240 4% 12%));
+    --gradient-glow: radial-gradient(circle at center, hsl(var(--primary-glow) / 0.3), transparent 70%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px hsl(240 10% 3.9% / 0.4);
+    --shadow-medium: 0 8px 30px hsl(240 10% 3.9% / 0.6);
+    --shadow-strong: 0 12px 40px hsl(240 10% 3.9% / 0.8);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
+    --shadow-glow-strong: 0 0 40px hsl(var(--primary) / 0.5);
+    
+    /* Animations */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Typography */
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background: var(--gradient-surface);
+  }
+  
+  /* Home page specific - always dark theme */
+  .theme-dark,
+  .theme-light {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Professional Light Mode Enhancements */
+  .theme-light {
+    --glass-bg: rgba(255, 255, 255, 0.95);
+    --glass-border: rgba(59, 130, 246, 0.3);
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --hover-bg: rgba(59, 130, 246, 0.1);
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-accent: #2563eb;
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --border-primary: #dbeafe;
+  }
+  
+  /* Gaming Dark Mode Enhancements */
+  .theme-dark {
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --hover-bg: rgba(255, 255, 255, 0.05);
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-accent: #38bdf8;
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --border-primary: #334155;
+  }
+}
+
+@layer components {
+  /* 3D Scene Container */
+  .scene-container {
+    @apply relative w-full h-full overflow-hidden;
+    background: var(--gradient-surface);
+  }
+  
+  /* Glassmorphism Effect */
+  .glass {
+    @apply backdrop-blur-md border;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(139, 92, 246, 0.1);
+  }
+  
+  /* Neon Glow Effects */
+  .glow-primary {
+    filter: drop-shadow(0 0 10px hsl(var(--primary) / 0.5));
+  }
+  
+  .glow-secondary {
+    filter: drop-shadow(0 0 10px hsl(var(--secondary) / 0.5));
+  }
+  
+  /* Hero Text Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { filter: drop-shadow(0 0 5px hsl(var(--primary) / 0.3)); }
+    50% { filter: drop-shadow(0 0 20px hsl(var(--primary) / 0.8)); }
+  }
+  
+  /* Navigation Styles */
+  .nav-link {
+    @apply relative py-2 px-4 rounded-lg transition-all duration-300;
+    @apply hover:bg-muted/50 hover:text-primary;
+    color: #ffffff !important;
+  }
+  
+  .nav-link.active {
+    @apply bg-primary/10 text-primary;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .nav-link::after {
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+    content: '';
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+  
+  /* Theme-specific navigation enhancements */
+  .theme-light .nav-link:hover {
+    background: rgba(0, 0, 0, 0.05);
+  }
+  
+  .theme-dark .nav-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--foreground));
+}
+
+/* Gamer-style gradient animations */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes rainbowShift {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 100% 100%; }
+  75% { background-position: 0% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes cyberShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes neonShift {
+  0% { background-position: 0% 50%; }
+  33% { background-position: 100% 50%; }
+  66% { background-position: 100% 100%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes scrollGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Theme-specific animations and effects */
+.theme-light {
+  --text-shadow: none;
+  --glow-intensity: 0.1;
+  --border-opacity: 0.2;
+}
+
+.theme-dark {
+  --text-shadow: 0 0 10px hsl(var(--primary) / 0.5);
+  --glow-intensity: 0.8;
+  --border-opacity: 0.1;
+}
+
+/* Enhanced glassmorphism for different themes */
+.theme-light .glass {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.theme-dark .glass {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+/* Enhanced card shadows and backgrounds */
+.card-enhanced {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(139, 92, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.card-enhanced:hover {
+  box-shadow: 
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(139, 92, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Enhanced navbar styling */
+.navbar-enhanced {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(139, 92, 246, 0.1);
+}
+
+.navbar-enhanced.scrolled {
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(139, 92, 246, 0.15);
+}
+
+/* Enhanced text visibility for dark mode */
+.theme-dark h1, .theme-dark h2, .theme-dark h3 {
+  color: #f8fafc !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark p, .theme-dark span {
+  color: #cbd5e1 !important;
+}
+
+.theme-dark .text-muted-foreground {
+  color: #94a3b8 !important;
+}
+
+/* Ensure all text is visible in dark mode */
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-muted-foreground {
+  color: #94a3b8 !important;
+}
+
+/* Enhanced card text visibility */
+.card-enhanced h1, .card-enhanced h2, .card-enhanced h3 {
+  color: #f8fafc !important;
+}
+
+.card-enhanced p, .card-enhanced span {
+  color: #cbd5e1 !important;
+}
+
+.card-enhanced .text-muted-foreground {
+  color: #94a3b8 !important;
+}
+
+/* Enhanced 3D animation colors for light mode */
+.theme-light .skill-orb {
+  background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+  border: 2px solid #3b82f6;
+  color: #1e40af;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.theme-light .skill-orb:hover {
+  background: linear-gradient(135deg, #bfdbfe, #93c5fd);
+  border-color: #2563eb;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Enhanced 3D animation colors for dark mode */
+.theme-dark .skill-orb {
+  background: linear-gradient(135deg, #0c4a6e, #075985);
+  border: 2px solid #38bdf8;
+  color: #e0f2fe;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.theme-dark .skill-orb:hover {
+  background: linear-gradient(135deg, #075985, #0c4a6e);
+  border-color: #0ea5e9;
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+}
+
+/* Professional light mode card styles */
+.theme-light .bg-white\/5 {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.theme-light .bg-white\/10 {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.theme-light .hover\:bg-white\/10:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* Gaming dark mode card styles */
+.theme-dark .bg-white\/5 {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.theme-dark .bg-white\/10 {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.theme-dark .hover\:bg-white\/10:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Gradient text */
+.bg-gradient-primary {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+}
+
+/* Hero button variants */
+.btn-hero {
+  @apply bg-gradient-to-r from-primary to-accent text-primary-foreground px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg;
+}
+
+.btn-neon {
+  @apply border-2 border-primary text-primary px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:shadow-lg;
+}
+
+.btn-glass {
+  @apply bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:bg-white/20;
+}
