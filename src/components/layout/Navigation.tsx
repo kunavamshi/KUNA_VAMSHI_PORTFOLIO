@@ -43,7 +43,7 @@ const Navigation = () => {
           <Link to="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 rounded-full overflow-hidden">
               <img 
-                src="/src/assets/profile-image.jpg" 
+                src="/profile-image.jpg" 
                 alt="Kunavamshi Profile" 
                 className="w-full h-full object-cover"
               />

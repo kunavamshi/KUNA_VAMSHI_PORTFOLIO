@@ -47,7 +47,7 @@ const Home = () => {
             className="flex justify-center mb-8"
           >
             <InteractiveAvatar 
-              src="/src/assets/profile-image.jpg"
+              src="/profile-image.jpg"
               alt="Kunavamshi - Full Stack Developer"
               fallback="KV"
               size="xl"

@@ -1,0 +1,26 @@
+{
+  "name": "Kuna Vamshi Portfolio",
+  "short_name": "KV Portfolio",
+  "description": "Interactive 3D portfolio showcasing full-stack development skills, AI/ML projects, and innovative web experiences",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f0f23",
+  "theme_color": "#8B5CF6",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
