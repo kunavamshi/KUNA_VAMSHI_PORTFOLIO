@@ -116,8 +116,7 @@ const Projects = () => {
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.6,
-        ease: "easeOut"
+        duration: 0.6
       }
     }
   };
@@ -127,8 +126,7 @@ const Projects = () => {
       y: -10,
       scale: 1.02,
       transition: {
-        duration: 0.3,
-        ease: "easeInOut"
+        duration: 0.3
       }
     }
   };
@@ -173,13 +171,13 @@ const Projects = () => {
           >
             <div className="card-enhanced p-6 text-center bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30">
               <div className="text-3xl font-bold text-blue-400 mb-2">
-                {projects.reduce((sum, p) => sum + p.stats.stars, 0)}
+                21
               </div>
               <div className="text-gray-300 text-sm">Total Stars</div>
             </div>
             <div className="card-enhanced p-6 text-center bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30">
               <div className="text-3xl font-bold text-purple-400 mb-2">
-                {projects.reduce((sum, p) => sum + p.stats.forks, 0)}
+                4
               </div>
               <div className="text-gray-300 text-sm">Total Forks</div>
             </div>
