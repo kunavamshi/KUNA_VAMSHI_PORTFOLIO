@@ -170,7 +170,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contact
 
-- **Portfolio**: [Your Portfolio URL]
+- **Portfolio**: https://kuna-vamshi-portfolio.vercel.app/
 - **LinkedIn**: https://www.linkedin.com/in/kunavamshi/
 - **GitHub**: https://github.com/kunavamshi/
 - **Email**: vamshikuna905@gmail.com
